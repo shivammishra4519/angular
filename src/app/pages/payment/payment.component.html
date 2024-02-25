@@ -1,0 +1,111 @@
+<div class="container">
+    <h1 style="text-align: center;"><b> Confirm Your Device Details</b> </h1>
+    <form [formGroup]="receivedForm">
+        <div class="row">
+            <div class="col-md-5">
+                <label for="ownername" class="form-label">Owner Name</label>
+                <input type="text" class="form-control" id="ownername" aria-describedby="emailHelp"
+                    formControlName="ownerName" readonly>
+            </div>
+            <div class="col-md-5">
+                <label for="ownernumber" class="form-label">Owner Mobile Number</label>
+                <input type="number" class="form-control" id="ownernumber" aria-describedby="emailHelp"
+                    formControlName="ownerMoblieNumber" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <label for="imei1" class="form-label">IMEI NUMBER 1</label>
+                <input type="number" class="form-control" id="imei1" aria-describedby="emailHelp"
+                    formControlName="imeiNumber1" readonly>
+            </div>
+            <div class="col-md-5">
+                <label for="imei2" class="form-label">IMEI NUMBER 2</label>
+                <input type="number" class="form-control" id="imei2" aria-describedby="emailHelp"
+                    formControlName="imeiNumber2" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <label for="brand" class="form-label">Brand Name</label>
+                <input type="text" class="form-control" id="brand" aria-describedby="emailHelp"
+                    formControlName="brandName" readonly>
+            </div>
+            <div class="col-md-5">
+                <label for="model" class="form-label">Model Name</label>
+                <input type="text" class="form-control" id="model" formControlName="modelName" readonly>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <label for="ldate" class="form-label">Lost Date</label>
+                <input type="date" class="form-control" id="ldate" formControlName="lostDate" readonly>
+            </div>
+            <div class="col-md-5">
+                <label for="number" class="form-label">Last Mobile Number</label>
+                <input type="number" class="form-control" id="number" formControlName="lastMobileNumber" readonly>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-5">
+                <label for="place" class="form-label"> lose Place </label>
+                <input type="text" class="form-control" id="place" formControlName="losePlace" readonly>
+            </div>
+            <div class="col-md-5">
+                <label for="place" class="form-label"> Email </label>
+                <input type="text" class="form-control" id="place" formControlName="email" readonly>
+            </div>
+
+        </div>
+
+        <div class="row" style="margin-top: 10px;padding: 20px;">
+            <div class="col-md-6">
+                <button type="submit" class="btn btn-success" (click)="payment()"> Prooceed To Payment</button>
+
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-5">
+                <button type="submit" class="btn btn-success" (click)="payment()"></button>
+                <button type="reset" class="btn btn-danger">Reset</button>
+            </div>
+        </div> -->
+    </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<body>
+    <form action='https://secure.payu.in/_payment' method='post'>
+        <input type="hidden" name="key" value="vFKE2M" />
+        <input type="hidden" name="txnid" value="12345672" />
+        <input type="hidden" name="productinfo" value="test-product" />
+        <input type="hidden" name="amount" value="1" />
+        <input type="hidden" name="email" value="misra3408@gmail.com" />
+        <input type="hidden" name="firstname" value="shivam" />
+        <input type="hidden" name="udf1" value="details1" />
+        <input type="hidden" name="udf2" value="details2" />
+        <input type="hidden" name="udf3" value="details3" />
+        <input type="hidden" name="udf4" value="details4" />
+        <input type="hidden" name="udf5" value="details5" />
+        <input type="hidden" name="lastname" value="" />
+        <input type="hidden" name="surl" value="http://localhost:4000/api/payment/success" />
+        <input type="hidden" name="furl" value="http://localhost:4000/api/payment/failed" />
+        <input type="hidden" name="phone" value="9335792497" />
+        <input type="hidden" name="hash" value="4d4d7840a778d17fbc12ff2a04dc058c5006ccadbe49312db3760f5ea51c56d349a74eb095dfcd4cf3c458cfc54ec9f4838bf800346cbec87cd157775fe00c7e" />
+        <input type="submit" value="submit">
+    </form>
+</body> -->

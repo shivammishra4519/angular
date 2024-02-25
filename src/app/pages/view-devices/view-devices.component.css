@@ -1,0 +1,30 @@
+.mat-elevation-z8{
+    overflow-x: scroll;
+}
+
+
+
+.main-div{
+display: flex;
+flex-direction: column;
+margin-top: 5px;
+}
+.filter {
+    width: calc(100vw - 200px);
+    background-color: rgb(235, 224, 224);
+    height: 45px;
+    display: flex;
+    gap: 20px;
+    padding: 6px;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+.filter .item input {
+    border: none; /* Remove border */
+    outline: none; /* Remove outline */
+    /* You can add more styling here as needed */
+    margin-left: 5px;
+  }
+  .item{
+    margin-top: 10px;
+  }

@@ -1,0 +1,21 @@
+<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+<div class="wrapper card sidebar">
+    <div class="sidebar">
+        <h2 style="color: #fff ; font-weight: 600;">Dashboard</h2>
+        <ul>
+            <li><a routerLink="/admin/home"><i class="fas fa-home"></i>Home</a></li>
+            <li *ngIf="admin || distributor"><a routerLink="/admin/userRegister"><i class="fas fa-address-book"></i>Register User</a></li>
+            <li  *ngIf="admin || user"><a routerLink="/admin/addevice"><i class="fas fa-address-book"></i>Add Device</a></li>
+            <li *ngIf="admin" ><a routerLink="/admin/adddistributor"><i class="fas fa-address-book"></i>Add Distributor</a></li>
+            <li *ngIf="admin" ><a routerLink="/admin/viewdistributor"><i class="fas fa-address-book"></i>View Distributor</a></li>
+            <li  ><a routerLink="/admin/viewdevice"><i class="fas fa-address-book"></i>View Device</a></li>
+            <li *ngIf="admin || distributor"><a routerLink="/admin/userlist"><i class="fas fa-address-book"></i>View User</a></li>
+            <li><button class="logout-btn" (click)="logOut()">Logout</button></li>
+        </ul> 
+       
+    </div>
+
+</div>
+
+

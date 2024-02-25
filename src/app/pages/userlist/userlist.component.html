@@ -1,0 +1,59 @@
+<!-- userlist.component.html -->
+
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!-- User Name Column -->
+      <ng-container matColumnDef="userName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User Name </th>
+        <td mat-cell *matCellDef="let user"> {{user.userName}} </td>
+      </ng-container>
+  
+      <!-- User Email Column -->
+      <ng-container matColumnDef="userEmail">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User Email </th>
+        <td mat-cell *matCellDef="let user"> {{user.userEmail}} </td>
+      </ng-container>
+  
+      <!-- City Column -->
+      <ng-container matColumnDef="city">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+        <td mat-cell *matCellDef="let user"> {{user.city}} </td>
+      </ng-container>
+  
+      <!-- Mobile Number Column -->
+      <ng-container matColumnDef="mobileNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile Number </th>
+        <td mat-cell *matCellDef="let user"> {{user.mobileNumber}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Active">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Active </th>
+        <td mat-cell *matCellDef="let element">
+            {{element.active ? 'Active' : 'Inactive'}}
+        </td>
+    </ng-container>
+
+      <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <div *ngIf="element.active; else deactivateButton">
+                <button class="btn btn-primary" (click)="updateStatus({number:element.mobileNumber,status:element.active})">
+                    Deactivate
+                </button>
+            </div>
+            <ng-template #deactivateButton>
+                <button class="btn btn-success" (click)="updateStatus({number:element.mobileNumber,status:element.active})">
+                    Activate
+                </button>
+            </ng-template>
+        </td>
+    </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let user; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+  </div>
+  

@@ -1,0 +1,33 @@
+<div class="container card1">
+    <h1 style="text-align: center;">Devices Report</h1>
+    <div>
+        <div class="row" style="color: blue;">
+           <div *ngIf="isReportUpdated">
+            <div class="col-md-3">Current Mobile Number</div>
+            <div class="col-md-3">Current Address</div>
+            <div class="col-md-3">imeiNumber1</div>
+           </div>
+            <div class="col-md-3">Payment Status</div>
+        </div>
+        <div class="row">
+            <div *ngIf="isReportUpdated">
+                <div class="col-md-3">{{result.currentNumber}}</div>
+                <div class="col-md-3">{{result.currentAddress}}</div>
+                <div class="col-md-3">{{result.imeiNumber1}}</div>
+            </div>
+            <div class="col-md-3">
+                <div *ngIf="payment.paymentStatus"><label for="">
+                        Payment successful
+                    </label></div>
+                <div *ngIf="!(payment.paymentStatus)"><label for="">
+                        Payment not Done Yet
+                        <button class="btn btn-link" (click)="proccedPayment()">Proceed To Payment</button>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button class="btn btn-danger" (click)="close()">Close</button>
+    </div>
+</div>

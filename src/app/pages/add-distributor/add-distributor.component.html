@@ -1,0 +1,48 @@
+<div class="container">
+    <h1 style="text-align: center;">ADD DISTRIBUTOR</h1>
+    <div class="card" style="padding: 10px 10px;">
+        <form [formGroup]="distributor" (ngSubmit)="addDistributor()">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="dName" class="form-label">Distributor Name</label>
+                    <input type="text" class="form-control" id="dName" formControlName="name">
+                </div>
+                <div class="col-md-6">
+                    <label for="dEmail" class="form-label">Distributor Email</label>
+                    <input type="email" class="form-control" id="dEmail" formControlName="email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" formControlName="address">
+                </div>
+                <div class="col-md-6">
+                    <label for="number" class="form-label">Mobile Number</label>
+                    <input type="email" class="form-control" id="number" formControlName="number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password">
+                </div>
+                <div class="col-md-6">
+                    <label for="active" class="form-label">Active</label>
+                    <select class="form-select" id="active" formControlName="active">
+                        <option value="true">Active</option>
+                        <option value="false">Deactivated</option>
+                    </select>
+                </div>
+                
+    </div>
+    <div class="row" style="margin-top: 10px;padding: 20px;">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-danger" style="margin-left: 20px;">Reset</button>
+        </div>
+    </div>
+    </form>
+
+</div>
+</div>

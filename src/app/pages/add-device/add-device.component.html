@@ -1,0 +1,127 @@
+<div class="container">
+    <h1 style="text-align: center;">Add Device</h1>
+    <form [formGroup]="addDevice" (ngSubmit)="addDeviceMethod()">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="ownername" class="form-label">Owner Name</label>
+          <input type="text" class="form-control" id="ownername" aria-describedby="emailHelp" formControlName="ownerName">
+          <div *ngIf="addDevice.controls['ownerName'].invalid && addDevice.controls['ownerName'].touched">
+            <div *ngIf="addDevice.controls['ownerName'].errors?.['required']">
+              <label class="text-danger"> Owner Name is required</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="ownernumber" class="form-label">Owner Mobile Number</label>
+          <input type="number" class="form-control" id="ownernumber" aria-describedby="emailHelp" formControlName="ownerMoblieNumber">
+          <div *ngIf="addDevice.controls['ownerMoblieNumber'].invalid && addDevice.controls['ownerMoblieNumber'].touched">
+            <div *ngIf="addDevice.controls['ownerMoblieNumber'].errors?.['required']">
+              <label class="text-danger"> Owner Name is required</label>
+            </div>
+            <div *ngIf="addDevice.controls['ownerMoblieNumber'].errors?.['pattern']">
+              <label for="" class="text-danger"> Enter a Valid Mobile Number</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="imei1" class="form-label">IMEI NUMBER 1</label>
+          <input type="number" class="form-control" id="imei1" aria-describedby="emailHelp" formControlName="imeiNumber1">
+          <div *ngIf="addDevice.controls['imeiNumber1'].invalid && addDevice.controls['imeiNumber1'].touched">
+            <div *ngIf="addDevice.controls['imeiNumber1'].errors?.['required']">
+              <label class="text-danger"> IMEI Number is required</label>
+            </div>
+            <div *ngIf="addDevice.controls['imeiNumber1'].errors?.['pattern']">
+              <label for="" class="text-danger"> Enter a Valid IMEI Number</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="imei2" class="form-label">IMEI NUMBER 2</label>
+          <input type="number" class="form-control" id="imei2" aria-describedby="emailHelp" formControlName="imeiNumber2">
+          <div *ngIf="addDevice.controls['imeiNumber2'].invalid && addDevice.controls['imeiNumber2'].touched">
+            <div *ngIf="addDevice.controls['imeiNumber2'].errors?.['required']">
+              <label class="text-danger"> IMEI Number is required</label>
+            </div>
+            <div *ngIf="addDevice.controls['imeiNumber2'].errors?.['pattern']">
+              <label for="" class="text-danger"> Enter a Valid IMEI Number</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="brand" class="form-label">Brand Name</label>
+          <input type="text" class="form-control" id="brand" aria-describedby="emailHelp" formControlName="brandName">
+          <div *ngIf="addDevice.controls['brandName'].invalid && addDevice.controls['brandName'].touched">
+            <div *ngIf="addDevice.controls['brandName'].errors?.['required']">
+              <label class="text-danger"> Brand Name is required</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="model" class="form-label">Model Name</label>
+          <input type="text" class="form-control" id="model" formControlName="modelName">
+          <div *ngIf="addDevice.controls['modelName'].invalid && addDevice.controls['modelName'].touched">
+            <div *ngIf="addDevice.controls['modelName'].errors?.['required']">
+              <label class="text-danger"> Model Name is required</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="ldate" class="form-label">Lost Date</label>
+          <input type="date" class="form-control" id="ldate" formControlName="lostDate">
+          <div *ngIf="addDevice.controls['lostDate'].invalid && addDevice.controls['lostDate'].touched">
+            <div *ngIf="addDevice.controls['lostDate'].errors?.['required']">
+              <label class="text-danger"> Lost Date is required</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="number" class="form-label">Last Mobile Number</label>
+          <input type="number" class="form-control" id="number" formControlName="lastMobileNumber">
+          <div *ngIf="addDevice.controls['lastMobileNumber'].invalid && addDevice.controls['lastMobileNumber'].touched">
+            <div *ngIf="addDevice.controls['lastMobileNumber'].errors?.['required']">
+              <label class="text-danger"> Last Mobile Number is required</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="place" class="form-label">Lose Place</label>
+          <input type="text" class="form-control" id="place" formControlName="losePlace">
+          <div *ngIf="addDevice.controls['losePlace'].invalid && addDevice.controls['losePlace'].touched">
+            <div *ngIf="addDevice.controls['losePlace'].errors?.['required']">
+              <label class="text-danger"> Lose Place is required</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" accept="image/*" class="form-control" id="email" formControlName="email">
+          <div *ngIf="addDevice.controls['email'].invalid && addDevice.controls['email'].touched">
+            <div *ngIf="addDevice.controls['email'].errors?.['required']">
+              <label class="text-danger"> Email is required</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="bill" class="form-label">Upload Bill</label>
+          <input type="file" accept="image/*" class="form-control" id="bill" formControlName="bill">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="reset" class="btn btn-danger">Reset</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  

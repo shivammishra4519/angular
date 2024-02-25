@@ -1,0 +1,151 @@
+<div class="main-div">
+
+  <div class="filter">
+    <div class="item">
+      <select name="" id="">
+        <option value="">All</option>
+        <option value="">Admin</option>
+        <option value="">Not Admin</option>
+      </select>
+    </div>
+      <div class="item">
+        <select name="" id="">
+          <option value="">All Distributor</option>
+          <option value="">User</option>
+        </select>
+      </div>
+      <div class="item">
+        <select name="" id="">
+          <option value="">All Member</option>
+          <option value="">User</option>
+        </select>
+      </div>
+      <div class="item">
+        <span>From</span>
+        <input type="date">
+      </div>
+      <div class="item">
+        <span>To</span>
+        <input type="date">
+      </div>
+      <div class="item">
+        <button class="btn btn-primary">Search</button>
+      </div>
+      <div class="item">
+        <button class="btn btn-primary">Pdf</button>
+      </div>
+      <div class="item">
+        <button class="btn btn-primary">Excel</button>
+      </div>
+  
+  </div>
+
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource" matSort>
+
+      <!-- Owner Name Column -->
+
+      <ng-container matColumnDef="ownerName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Owner Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.ownerName}} </td>
+      </ng-container>
+
+      <!-- Owner Mobile Number Column -->
+      <ng-container matColumnDef="ownerMoblieNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Owner Mobile Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.ownerMoblieNumber}} </td>
+      </ng-container>
+
+      <!-- IMEI Number 1 Column -->
+      <ng-container matColumnDef="imeiNumber1">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> IMEI Number 1 </th>
+        <td mat-cell *matCellDef="let element"> {{element.imeiNumber1}} </td>
+      </ng-container>
+
+      IMEI Number 2 Column
+      <ng-container matColumnDef="imeiNumber2">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> IMEI Number 2 </th>
+        <td mat-cell *matCellDef="let element"> {{element.imeiNumber2}} </td>
+      </ng-container>
+
+      <!-- Brand Name Column -->
+      <ng-container matColumnDef="brandName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Brand Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.brandName}} </td>
+      </ng-container>
+
+      <!-- Model Name Column -->
+      <ng-container matColumnDef="modelName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Model Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.modelName}} </td>
+      </ng-container>
+
+      <!-- Lost Date Column -->
+      <ng-container matColumnDef="lostDate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Lost Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.lostDate}} </td>
+      </ng-container>
+
+      <!-- Last Mobile Number Column -->
+      <ng-container matColumnDef="lastMobileNumber">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Mobile Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.lastMobileNumber}} </td>
+      </ng-container>
+
+      <!-- Lose Place Column -->
+      <ng-container matColumnDef="losePlace">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Lose Place </th>
+        <td mat-cell *matCellDef="let element"> {{element.losePlace}} </td>
+      </ng-container>
+      <!-- <ng-container matColumnDef="bill">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill </th>
+        <td mat-cell *matCellDef="let element"> 
+        <img src="{{element.bill}}" alt="">
+        </td>
+      </ng-container> -->
+      <ng-container matColumnDef="button" *ngIf="role === 'admin'">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Report </th>
+        <td mat-cell *matCellDef="let element">
+
+
+          <button class="btn btn-secondary" (click)="updateDevice(element.imeiNumber1)">update</button>
+
+
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status </th>
+        <td mat-cell *matCellDef="let element">
+          <div>
+            <button class="btn btn-primary" (click)="viewReport(element.imeiNumber1)">View </button>
+          </div>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of mobile devices">
+    </mat-paginator>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- ownerName: string;
+ownerMoblieNumber: number;
+imeiNumber1: number;
+imeiNumber2: number;
+brandName: string;
+modelName: string;
+lostDate: string; // Assuming the date will be represented as a string in ISO format
+lastMobileNumber: number;
+losePlace: string; -->

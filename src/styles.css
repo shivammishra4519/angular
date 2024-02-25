@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body{
+    overflow-x: hidden;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+ .your-custom-dialog-class {
+    /* Add your custom styles here */
+    background-color: #f0f0f0 !important;
+    color: #333;
+    /* ... other styles ... */
+  }
+  

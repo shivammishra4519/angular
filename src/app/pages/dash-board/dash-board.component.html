@@ -1,0 +1,23 @@
+<div class="bootstrap-wrapper">
+    <div class="header">
+       
+        <div class="marquee">
+            <p><b>This is a simple marquee example using CSS animation.</b></p>
+          </div>
+
+    </div>
+    <div class="row">
+        <input type="checkbox" id="sidebar-toggle" />
+        <label for="sidebar-toggle" class="toggle-btn" style="color: aliceblue;">&#9776;</label>
+        <div class="sidebar">
+            <app-sidebar></app-sidebar>
+        </div>
+        
+        <div class="main-cont">
+            <router-outlet></router-outlet>
+            <div class="footer">
+                <app-footer></app-footer>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,81 @@
+<div class="container col-md-10 form">
+    <h1 style="text-align: center;">Register User</h1>
+    <form [formGroup]="userRegister" (ngSubmit)="registration()">
+        <div class="row">
+            <div class="col-md-5">
+                <label for="username" class="form-label">User Name</label>
+                <input type="text" id="username" class="form-control" placeholder="User Name"
+                    formControlName="userName">
+                <div *ngIf="userRegister.controls['userName'].invalid && userRegister.controls['userName'].touched">
+                    <div *ngIf="userRegister.controls['userName'].errors?.['required']">
+                        <label class="text-danger">User Name is required</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="useremail" class="form-label">User Email</label>
+                <input type="text" id="useremail" class="form-control" placeholder="User Email"
+                    formControlName="userEmail">
+                <div *ngIf="userRegister.controls['userEmail'].invalid && userRegister.controls['userEmail'].touched">
+                    <div *ngIf="userRegister.controls['userEmail'].errors?.['required']">
+                        <label class="text-danger">Email is required</label>
+                    </div>
+                    <div *ngIf="userRegister.controls['userEmail'].errors?.['email']">
+                        <label class="text-danger">Enter a valid Email id</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <label for="number" class="form-label">Mobile Number</label>
+                <input type="text" id="number" class="form-control" placeholder="Mobile Number"
+                    formControlName="mobileNumber">
+                <div
+                    *ngIf="userRegister.controls['mobileNumber'].invalid && userRegister.controls['mobileNumber'].touched">
+                    <div *ngIf="userRegister.controls['mobileNumber'].errors?.['required']">
+                        <label class="text-danger">Mobile Number is required</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="city" class="form-label">City</label>
+                <input type="text" id="city" class="form-control" placeholder="Enter City" formControlName="city">
+                <div *ngIf="userRegister.controls['city'].invalid && userRegister.controls['city'].touched">
+                    <div *ngIf="userRegister.controls['city'].errors?.['required']">
+                        <label class="text-danger">City is required</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <label for="Password" class="form-label">Password</label>
+                <input type="text" id="Password" class="form-control" placeholder="Enter Password"
+                    formControlName="passWord">
+                <div *ngIf="userRegister.controls['passWord'].invalid && userRegister.controls['passWord'].touched">
+                    <div *ngIf="userRegister.controls['passWord'].errors?.['required']">
+                        <label class="text-danger">Password is required</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <label for="active" class="form-label">Active</label>
+                <select class="form-select" id="active" formControlName="active">
+                    <option value="true">Active</option>
+                    <option value="false">Deactivated</option>
+                </select>
+            </div>
+        </div>
+        <div class="row"> <!-- Moved the closing div tag to enclose the two columns -->
+            <div class="col-md-5 btn-cl">
+                <button type="submit" class="btn btn-success btn-outline"
+                    [disabled]="userRegister.invalid">Submit</button>
+                <button type="reset" class="btn btn-danger btn-outline btn-sel">Reset</button>
+            </div>
+
+        </div>
+    </form>
+</div>
+
+<!-- shivam@123 -->

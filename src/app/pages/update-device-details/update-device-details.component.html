@@ -1,0 +1,23 @@
+<mat-card>
+    <mat-card-content style="text-align: center;">Update Details</mat-card-content>
+    <div class="container cont">
+        <form [formGroup]="mobileDetails" (ngSubmit)="submit()">
+            <div class="row">
+                <div class="col-md-5">
+                    <label for="number" class="form-label">Current Mobile Number</label>
+                    <input type="text" class="form-control" id="number" formControlName="currentNumber">
+                </div>
+                <div class="col-md-5">
+                    <label for="address" class="form-label">Current Address</label>
+                    <input type="text" class="form-control" id="address" formControlName="currentAddress">
+                </div>
+            </div>
+            <div class="row">
+                <div class="btn-div">
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+        <button class="btn btn-danger btn-self" (click)="close()">close</button>
+    </div>
+</mat-card>
