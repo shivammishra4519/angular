@@ -11,11 +11,7 @@ export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
 //  url="https://mobilefinder.store/mobi/"
-<<<<<<< HEAD
  url="http://62.72.56.135:4000/"
-=======
- url="http://localhost:4200/"
->>>>>>> a68a1c4cdef57b84ce8dd462e0d31f7adf29c6b4
   registerUser(data: any) {
     const url = `${this.url}user/register`;
     const headers = new HttpHeaders({
@@ -32,8 +28,8 @@ export class ApiServiceService {
     return this.http.post(url, {},{ headers: header })
   }
   login(data: any) {
-    // const url = "http://localhost:4000/api/login";
-    const url = `${this.url}api/login`;
+    const url = "http://localhost:4000/api/login";
+    // const url = `${this.url}api/login`;
     return this.http.post(url, data).pipe(
     );
   }
