@@ -11,7 +11,7 @@ export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
 //  url="https://mobilefinder.store/mobi/"
- url="http://localhost:4000/"
+ url="http://62.72.56.135:4000/"
   registerUser(data: any) {
     const url = `${this.url}user/register`;
     const headers = new HttpHeaders({
